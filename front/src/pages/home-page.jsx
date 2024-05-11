@@ -7,6 +7,9 @@ export function HomePage() {
                     <div className='nav-card'>
                     <NavLink to="/scan">סריקת מוצר</NavLink>
                     </div>
+                    <div className='nav-card'>
+                    <NavLink to="/invite-friends">הזמנת חברים</NavLink>
+                    </div>
                 </div>
             </section>
     )

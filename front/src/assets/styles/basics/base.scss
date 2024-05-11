@@ -15,7 +15,6 @@ body {
     margin: auto;
     font-family: livvic-semi-bold;
 
-    
 }
 
 
@@ -26,26 +25,21 @@ h4,
 h5,
 h6 {
     margin: 0;
+    font-family: sans-serif;
+
 }
 
 h1{
-    font-size: 64px;
-    line-height: 56px;
-    font-family: livvic-bold;
-    &.large{
-        font-size: 100px;
-        line-height: 100px;
-    }
+    font-size: 28px;
+    line-height: 36px;
 }
 h2{
-    font-size: 48px;
-    line-height: 48px;
-    font-family: livvic-bold;
+    font-size: 18px;
+    line-height: 28px;
 }
 h3{
     font-size: 18px;
     line-height: 28px;
-    font-family: livvic-bold;
 }
 
 
@@ -82,14 +76,15 @@ a:hover {
     display: flex;
     flex-direction: column;
     font-family: sans-serif;
-
+    
+    
 
     .app-main-container {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
         align-items: stretch;
-
+        direction: rtl;
         // max-width: 1500px;
         margin: 0;
         padding: 0;

@@ -3,10 +3,13 @@ import React from 'react'
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 import { AppHeader } from './cmps/app-header.jsx'
+
+// Pages
 import { HomePage } from './pages/home-page.jsx';
 import { ScanPage } from './pages/scan-page.jsx';
 import { ProductPage } from './pages/product-page.jsx';
 import { ProductAddPage } from './pages/product-add.jsx';
+import { InviteFriendsPage } from './pages/invite-friends.jsx';
 
 import { AppFooter } from './cmps/app-footer'
 
@@ -29,6 +32,9 @@ export function RootCmp() {
                             <Route element={<ScanPage />} path="/scan" />
                             <Route element={<ProductPage />} path="/products" />
                             <Route element={<ProductAddPage />} path="/add-product" />
+                            <Route element={<InviteFriendsPage />} path="/invite-friends" />
+
+                        
                         </Routes>
                     </main>
                     <AppFooter />
