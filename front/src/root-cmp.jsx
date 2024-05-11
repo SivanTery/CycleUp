@@ -10,6 +10,7 @@ import { ScanPage } from './pages/scan-page.jsx';
 import { ProductPage } from './pages/product-page.jsx';
 import { ProductAddPage } from './pages/product-add.jsx';
 import { InviteFriendsPage } from './pages/invite-friends.jsx';
+import { BenefitsPage } from './pages/benefits.jsx';
 
 import { AppFooter } from './cmps/app-footer'
 
@@ -33,6 +34,7 @@ export function RootCmp() {
                             <Route element={<ProductPage />} path="/products" />
                             <Route element={<ProductAddPage />} path="/add-product" />
                             <Route element={<InviteFriendsPage />} path="/invite-friends" />
+                            <Route element={<BenefitsPage />} path="/benefits" />
 
                         
                         </Routes>
