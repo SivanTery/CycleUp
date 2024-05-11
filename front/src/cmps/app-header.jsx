@@ -16,6 +16,7 @@ export function AppHeader() {
             <div className='header-container'>
                 <nav>
                     <NavLink to="/">CycleUp</NavLink>
+                    <NavLink to="/scan">סריקת מוצר</NavLink>
                     {/* <NavLink to="/">Home</NavLink> */}
                 </nav>
 

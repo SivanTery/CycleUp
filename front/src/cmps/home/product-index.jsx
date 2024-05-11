@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { loadProducts } from "../../store/product.action.js";
-import { ProductAdd } from "./product-add.jsx";
 import { ProductFilter } from "./product-filter.jsx";
 import { ProductList } from "./product-list.jsx";
 import { useSelector } from 'react-redux'
@@ -24,7 +23,6 @@ export function ProductIndex() {
 
     return (
         <section className='product-index'>
-            <ProductAdd />
             <ProductFilter />
             {products && <ProductList products={products} />}
         </section>
