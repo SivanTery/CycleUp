@@ -25,21 +25,26 @@ export function ProductFilter() {
         setFilterBy((prevFilter) => ({ ...prevFilter, [field]: value }))
     }
 
-    return <form className="product-filter">
+    return <form className="product-filters">
+         <div className='filter-input-container'>
+         <label htmlFor="name">שם המוצר:</label>
             <input type="text"
                 name="name"
-                placeholder="Filter"
+                placeholder="הזן את שם המוצר"
                 value={filterBy.name}
                 onChange={handleChange}
                 ref={elInputRef}
             />
+          </div>
 
+          <div className='filter-input-container'>
+          <label htmlFor="garbageType">סוג פח למחזור:</label>
             <select
                  onChange={handleChange}
                  value={filterBy.garbageType}
                  name='garbageType'
             >
-                <option value="" disabled>Select an option</option>
+                <option value="" disabled>בחר סוג פח</option>
                 {Object.keys(garbageTypes).map((garbageType) => (
                   <option
                     key={garbageType}
@@ -50,6 +55,8 @@ export function ProductFilter() {
                   </option>
                 ))}
             </select>
+         </div>
+
     </form>
 
 }

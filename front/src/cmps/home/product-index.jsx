@@ -23,6 +23,7 @@ export function ProductIndex() {
 
     return (
         <section className='product-index'>
+            <h1>רשימת המוצרים</h1>
             <ProductFilter />
             {products && <ProductList products={products} />}
         </section>

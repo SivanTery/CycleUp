@@ -20,6 +20,7 @@ export function productReducer(state = initialState, action) {
         case SET_IS_LOADING:
             return { ...state, isLoading: action.isLoading }
         case ADD_PRODUCT:
+            console.log(state);
             products = [action.product, ...state.products]
             return { ...state, products }
 

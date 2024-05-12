@@ -25,6 +25,7 @@ function get(filterBy = getDefaultFilter()) {
 }
 
 function save(product) {
+    console.log( 'product' , product);
     if (product._id) {
         return storageService.put(BASE_URL, product)
     } else {
@@ -35,12 +36,12 @@ function save(product) {
 
 function getGarbageTypes() {
     return {
-       green: 'mixed', 
-       blue: 'paper', 
-       orange: 'packages & plastic',
-       brown: 'organics',
-       purple: 'glass',
-       gray: 'metal',
+       ירוק: 'מעורב', 
+       כחול: 'נייר', 
+       כתום: 'חבילות + פלסטיק',
+       חום: 'אורגני',
+       סגול: 'זכוכית',
+       אפור: 'מתכת',
 
     }
 }
@@ -55,10 +56,10 @@ function getDefaultFilter() {
 function getEmptyProduct() {
 
     return {
-            name: "Coke",
-            company: "CokaCola",
-            image: "https://w7.pngwing.com/pngs/523/573/png-transparent-fizzy-drinks-coca-cola-diet-coke-beverage-can-coca-cola-food-tea-cola-thumbnail.png",
-            garbageType: "orange"
+            name: "",
+            company: "",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxynqa9f2uuEIWMpfD_BUm_Z4SvtccDhDv6g&s",
+            garbageType: ""
     }
 }
 

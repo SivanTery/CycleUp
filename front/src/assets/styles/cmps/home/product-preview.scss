@@ -1,12 +1,10 @@
 .product-preview {
     display: flex;
-    align-items: center;
-    gap: 30px;
+    flex-direction: column;
 
-    .preview-img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
+    .product-img {
+        width: 150px;
+        height: 150px;
     }
 
     h3 {
