@@ -16,27 +16,28 @@ export function BenefitsPage() {
 
                 <div className='nav-card-wrapper'>
                     <div className='brand-card'>
-                    <img src={footlocker} className="brand-img large"/>
+                        <img src={footlocker} className="brand-img large"/>
                         <p>שובר בסך 50 ₪ ברשת Foot locker</p>
                         <div className="price">
                             <span>1,000</span>
-                        <img src={dollar}/>
+                            <img src={dollar}/>
                         </div>
+                        {/* <a class="stretched-link"></a> */}
                     </div>
                     <div className='brand-card'>
-                    <img src={billabong} className="brand-img"/>
+                        <img src={billabong} className="brand-img"/>
                         <p>שובר בסך 50 ₪ ברשת Billabong</p>
                         <div className="price">
                             <span>1,000</span>
-                    <img src={dollar}/>
+                            <img src={dollar}/>
                         </div>
                     </div>
                     <div className='brand-card'>
-                    <img src={naaman} className="brand-img x-large"/>
+                        <img src={naaman} className="brand-img x-large"/>
                         <p>שובר בסך 100 ₪ ברשת Naaman</p>
                         <div className="price">
                             <span>2,000</span>
-                    <img src={dollar}/>
+                            <img src={dollar}/>
                         </div>
                     </div>
                 </div>
