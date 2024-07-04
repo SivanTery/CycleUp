@@ -1,0 +1,110 @@
+.login, .signup {
+    margin: 0;
+    flex-grow: 1;
+    padding: 20px 0;
+    position: relative;
+    color: $p-clr2;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../../img/home-background.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+        opacity: 0.7;
+
+    }
+
+    h1 {
+        margin-block: 60px;
+        text-align: center;
+        font-size: 40px;
+
+        &.forgot-password-title{
+            margin-bottom: 20px;
+        }
+    }
+
+    p{
+        max-width: 400px;
+        text-align: center;
+        margin: 0 auto 40px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .login-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        &:nth-last-child(2) {
+            margin-bottom: 40px;
+        }
+
+        input, select {
+            width: clamp(180px, 100%, 250px);
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid $p-clr1;
+        }
+    }
+
+    .actions-wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px ;
+    }
+
+    .login-btn {
+        align-self: center;
+        padding: 10px 30px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 2rem;
+        color: $p-clr2;
+        border: 1px solid $p-clr2;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    button.login-btn{
+        flex-basis: 100%;
+    }
+
+    .forgot-pass {
+        align-self: center;
+        color: $p-clr2;
+        text-decoration: underline;
+    }
+
+
+}
+
+.thankyou-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+
+    h1{
+        margin-bottom: 20px;
+    }
+    p{
+        font-size: 28px;
+        font-weight: 600;
+    }
+}

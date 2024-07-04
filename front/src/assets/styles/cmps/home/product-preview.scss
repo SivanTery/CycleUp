@@ -1,0 +1,22 @@
+.product-preview {
+    display: flex;
+    flex-direction: column;
+
+    .product-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    h3 {
+        margin: 0;
+    }
+    p{
+        margin: 0;
+        color: gray;
+    }
+
+    .product-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
