@@ -1,10 +1,12 @@
-.benefits{
+.benefits, .single-benefit{
     margin: 0;
-    padding: 0;
     flex-grow: 1;
-
 padding: 20px 0;
 position: relative;
+
+    &.single-benefit{
+        padding: 0;
+    }
 
 .content-wrapper{
   max-width: max-content;
@@ -14,6 +16,37 @@ position: relative;
   align-items: center;
   gap: 30px;
 }
+
+    .single-wrapper{
+        text-align: center;
+
+        .image-wrapper{
+            background: rgba(255,255,255,0.6);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        img{
+            max-width: 300px;
+        }
+
+        h1{
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        .price{
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .site-btn{
+            margin: 0 auto;
+        }
+    }
 
 .content-wrapper-img{
   max-width: 100px;
@@ -35,6 +68,12 @@ position: relative;
 
 
 }
+
+    .stretched-link{
+        position: absolute;
+        inset: 0;
+        cursor: pointer;
+    }
 
 h1{
   color: $p-clr2;
@@ -60,6 +99,7 @@ h1{
 }
 
 .brand-card{
+    position: relative;
   .brand-img{
     width: 100%;
     max-width: 100px;

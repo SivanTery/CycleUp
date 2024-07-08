@@ -142,3 +142,15 @@ button{
         @include btn($type: secondary);
     }
 }
+
+.site-btn {
+    align-self: center;
+    padding: 10px 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 2rem;
+    color: $p-clr2;
+    border: 1px solid $p-clr2;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+}

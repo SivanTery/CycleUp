@@ -14,6 +14,7 @@ import { ProductPage } from './pages/product-page.jsx';
 import { ProductAddPage } from './pages/product-add.jsx';
 import { InviteFriendsPage } from './pages/invite-friends.jsx';
 import { BenefitsPage } from './pages/benefits.jsx';
+import { SingleBenefit } from './pages/single-benefit.jsx';
 
 import { AppFooter } from './cmps/app-footer'
 
@@ -42,7 +43,6 @@ export function RootCmp() {
                             <Route element={<InviteFriendsPage />} path="/invite-friends" />
                             <Route element={<BenefitsPage />} path="/benefits" />
 
-                        
                         </Routes>
                     </main>
                     <AppFooter />
