@@ -1,21 +1,24 @@
-import {utilService} from "../services/util.service"
 import dollar from '../assets/icons/dollar.png';
-import presents from '../assets/icons/presents.png';
+import {useEffect, useState} from "react"
+import {FirstStep} from '../cmps/benefits/step-1.jsx'
+import {SecondStep} from '../cmps/benefits/step-2.jsx'
+import {ThirdStep} from '../cmps/benefits/step-3.jsx'
 
 export function SingleBenefit( { img, desc, id } ) {
+
+    const [step, setStep] = useState( 1 )
+
+
+
+    function renderCmp() {
+        if ( step === 1 ) return <FirstStep img={img} desc={desc} setStep={setStep}/>
+        else if ( step === 2 ) return <SecondStep img={img} desc={desc} setStep={setStep}/>
+        else return <ThirdStep img={img} desc={desc} setStep={setStep}/>
+    }
+
     return (
         <div className="single-wrapper">
-            <div className="image-wrapper">
-                <img src={img} className="brand-img large"/>
-            </div>
-            <h1>{desc}</h1>
-            <div className="price">
-                <span>1,000</span>
-                <img src={dollar}/>
-            </div>
-
-            <p>תקף גם במבצעים והנחות המיועדים לכלל הלקוחות.</p>
-            <button className="site-btn">אני רוצה את זה</button>
+            {renderCmp()}
         </div>
     )
 
