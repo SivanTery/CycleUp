@@ -32,9 +32,6 @@ export function ProductAdd() {
         })
     }
 
-
-
-
     return (
         <section className='product-add'>
                 <h1>{showThankyou ? 'המוצר התווסף בהצלחה!' : 'הזן את פרטי המוצר אותו ברצונך להוסיף'}</h1>

@@ -1,16 +1,48 @@
-import { NavLink, Link } from 'react-router-dom'
+import {NavLink, useLocation} from 'react-router-dom'
+import {useEffect, useState} from "react";
 
 export function AppHeader() {
+
+    const [showBackButton, setShowBackButton] = useState( false );
+    const location = useLocation();
+
+    useEffect( () => {
+        const handleLocationChange = () => {
+            console.log( 'test' );
+            if ( location.pathname === '/' && (location.hash === '' || location.hash === '#/' || location.hash === '#') ) {
+                setShowBackButton( false );
+            } else {
+                setShowBackButton( true );
+            }
+        };
+
+        // Initial check
+        handleLocationChange();
+
+        // Run handleLocationChange whenever location changes
+        handleLocationChange();
+    }, [location] );
+    function goBack() {
+        window.history.back()
+    }
+
     return (
         <header className="app-header full main-layout">
             <div className='header-container'>
                 <nav>
-                    <NavLink to="/">CycleUp</NavLink>
-                    <NavLink to="/user">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="30px" height="30px" viewBox="0 0 256 256" id="Flat">
-                            <path d="M228,128A100,100,0,1,0,60.71,201.90967a3.97048,3.97048,0,0,0,.842.751,99.79378,99.79378,0,0,0,132.8982-.00195,3.96558,3.96558,0,0,0,.83813-.74756A99.76267,99.76267,0,0,0,228,128ZM36,128a92,92,0,1,1,157.17139,64.87207,75.616,75.616,0,0,0-44.50782-34.04053,44,44,0,1,0-41.32714,0,75.61784,75.61784,0,0,0-44.50782,34.04A91.70755,91.70755,0,0,1,36,128Zm92,28a36,36,0,1,1,36-36A36.04061,36.04061,0,0,1,128,156ZM68.86475,198.417a68.01092,68.01092,0,0,1,118.27.00049,91.80393,91.80393,0,0,1-118.27-.00049Z"/>
+                    <NavLink to="/" className="logo">CycleUp</NavLink>
+
+                    {showBackButton ? <button className="arrow-back" onClick={() => goBack()}>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="30px" height="30px" viewBox="0 0 24 24">
+                            <g data-name="Layer 2">
+                                <g data-name="arrow-back">
+                                    <rect width="24" height="24" transform="rotate(90 12 12)" opacity="0"/>
+                                    <path d="M19 11H7.14l3.63-4.36a1 1 0 1 0-1.54-1.28l-5 6a1.19 1.19 0 0 0-.09.15c0 .05 0 .08-.07.13A1 1 0 0 0 4 12a1 1 0 0 0 .07.36c0 .05 0 .08.07.13a1.19 1.19 0 0 0 .09.15l5 6A1 1 0 0 0 10 19a1 1 0 0 0 .64-.23 1 1 0 0 0 .13-1.41L7.14 13H19a1 1 0 0 0 0-2z"/>
+                                </g>
+                            </g>
                         </svg>
-                    </NavLink>
+                    </button> : null }
+
                 </nav>
             </div>
         </header>

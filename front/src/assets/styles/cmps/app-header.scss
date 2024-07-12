@@ -16,9 +16,18 @@
         width: 100%;
         align-items: center;
         gap: 40px;
+
+        .logo{
+            padding: 7px;
+            font-size: 20px;
+        }
         img{
             margin: 0;
             padding-right: 40px;            
+        }
+
+        svg{
+            transform: rotate(180deg);
         }
     }
 }

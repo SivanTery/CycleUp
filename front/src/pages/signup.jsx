@@ -32,6 +32,7 @@ export function Signup() {
                                 id="name"
                                 name='name'
                                 placeholder='הזן שם המשתמש'
+                                required
                                 value={user.name}
                                 onChange={handleChange}
                             />
@@ -42,6 +43,7 @@ export function Signup() {
                             <input type='password'
                                 name='password'
                                 id='password'
+                                required
                                 placeholder='הזן סיסמא'
                                 value={user.password}
                                 onChange={handleChange}
@@ -53,6 +55,7 @@ export function Signup() {
                             <input type='mail'
                                 id="mail"
                                 name='mail'
+                                required
                                 placeholder='הזן מייל'
                                 value={user.mail}
                                 onChange={handleChange}
@@ -65,6 +68,7 @@ export function Signup() {
                             <input type='number'
                                 name='phone'
                                 id='phone'
+                                required
                                 placeholder='הזן את מספר הטלפון הנייד'
                                 value={user.phone}
                                 onChange={handleChange}
@@ -79,6 +83,17 @@ export function Signup() {
                                 id='city'
                                 placeholder='הזן עיר מגורים'
                                 value={user.city}
+                                onChange={handleChange}
+                            />
+                        </div>
+
+                        <div className='login-container'>
+                            <label htmlFor="coupon">קוד חבר:</label>
+                            <input type='text'
+                                name='coupon'
+                                id='coupon'
+                                placeholder='הזן קוד חבר'
+                                value={user.coupon}
                                 onChange={handleChange}
                             />
                         </div>
