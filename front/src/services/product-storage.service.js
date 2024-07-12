@@ -1,4 +1,4 @@
-export const storageService = {
+export const productStorageService = {
     query,
     get,
     post,
@@ -70,4 +70,3 @@ function _makeId(length = 5) {
     }
     return text
 }
-

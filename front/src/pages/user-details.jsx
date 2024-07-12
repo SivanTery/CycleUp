@@ -1,16 +1,15 @@
 import {useState} from "react";
 import {NavLink, Link} from 'react-router-dom'
-import {userService} from "../services/user.service"
 
-export function Login() {
+export function UserDetails() {
 
     const [user, setUser] = useState( {} )
 
     function onSubmit( ev ) {
         ev.preventDefault()
         // TODO: CREATE USER
-        userService.login(user)
-        // window.location.href = '/'
+        // userLogin(user)
+        window.location.href = '/'
     }
 
     function handleChange( { target } ) {
@@ -37,10 +36,10 @@ export function Login() {
                         </div>
 
                         <div className='login-container'>
-                            <label htmlFor="password">סיסמא:</label>
-                            <input type='password'
-                                name='password'
-                                id='password'
+                            <label htmlFor="company">סיסמא:</label>
+                            <input type='text'
+                                name='company'
+                                id='company'
                                 placeholder='הזן את הסיסמא'
                                 value={user.password}
                                 onChange={handleChange}

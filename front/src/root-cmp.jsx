@@ -14,7 +14,7 @@ import { ProductPage } from './pages/product-page.jsx';
 import { ProductAddPage } from './pages/product-add.jsx';
 import { InviteFriendsPage } from './pages/invite-friends.jsx';
 import { BenefitsPage } from './pages/benefits.jsx';
-import { SingleBenefit } from './pages/single-benefit.jsx';
+import { UserDetails } from './pages/user-details'
 
 import { AppFooter } from './cmps/app-footer'
 
@@ -22,7 +22,6 @@ import { AppFooter } from './cmps/app-footer'
 import { Provider } from 'react-redux';
 import { store } from './store/store.js';
 
-// import { UserDetails } from './pages/user-details'
 
 export function RootCmp() {
 
@@ -34,6 +33,7 @@ export function RootCmp() {
                     <main className='app-main-container full'>
                         <Routes>
                             <Route element={<HomePage />} path="/" />
+                            <Route element={<UserDetails />} path="/user" />
                             <Route element={<Login />} path="/login" />
                             <Route element={<Signup />} path="/signup" />
                             <Route element={<ForgotPassword />} path="/forgot-password" />

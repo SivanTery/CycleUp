@@ -1,6 +1,6 @@
 // import { httpService } from './http.service.js'
 
-import { storageService } from './async-storage.service.js'
+import {productStorageService} from './product-storage.service.js'
 
 // const BASE_URL = 'product/'
 const BASE_URL = 'product'
@@ -15,21 +15,21 @@ export const productService = {
 }
 
 function query(filterBy = getDefaultFilter()) {
-    return storageService.query(BASE_URL, filterBy)
+    return productStorageService.query(BASE_URL, filterBy)
 }
 
 
 function get(filterBy = getDefaultFilter()) {
     const queryParams = `?name=${filterBy.name}`
-    return storageService.get(BASE_URL + queryParams)
+    return productStorageService.get(BASE_URL + queryParams)
 }
 
 function save(product) {
     console.log( 'product' , product);
     if (product._id) {
-        return storageService.put(BASE_URL, product)
+        return productStorageService.put(BASE_URL, product)
     } else {
-        return storageService.post(BASE_URL, product)
+        return productStorageService.post(BASE_URL, product)
     }
 }
 
@@ -62,4 +62,3 @@ function getEmptyProduct() {
             garbageType: ""
     }
 }
-
