@@ -36,13 +36,9 @@ function save(product) {
 
 function getGarbageTypes() {
     return {
-       ירוק: 'מעורב', 
-       כחול: 'נייר', 
+       כחול: 'נייר',
        כתום: 'חבילות + פלסטיק',
-       חום: 'אורגני',
        סגול: 'זכוכית',
-       אפור: 'מתכת',
-
     }
 }
 
@@ -57,8 +53,6 @@ function getEmptyProduct() {
 
     return {
             name: "",
-            company: "",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxynqa9f2uuEIWMpfD_BUm_Z4SvtccDhDv6g&s",
             garbageType: ""
     }
 }

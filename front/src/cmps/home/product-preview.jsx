@@ -1,14 +1,19 @@
-export function ProductPreview({ product }) {
+import {productService} from "../../services/product.service"
+
+export function ProductPreview( { product } ) {
+    const garbageTypes = productService.getGarbageTypes()
+
+    const getColorByGarbageType = {
+        'כחול' : 'blue',
+        'סגול' : 'purple',
+        'כתום' : 'orange',
+    }
 
     return (
-        <section className='product-preview'>
-            <img className="product-img" src={product.image} />
-            <div className="product-container">
-                <h3 className="product-name">{product.name}</h3>
-                <p className="product-company">{product.company}</p>
-                <p className="product-garbage-type">{product.garbageType}</p>
-            </div>
-        </section>
+        <tr className="product-container">
+            <td className="product-name">{product.name}</td>
+            <td style={{color: getColorByGarbageType[ product.garbageType ]}} className="product-garbage-type">{product.garbageType}</td>
+        </tr>
     )
 
 }

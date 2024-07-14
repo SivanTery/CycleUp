@@ -1,6 +1,33 @@
 .product-list{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
     justify-content: center;
+
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+
+    thead {
+        background-color: #beca81;
+        color: #ffffff;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: right;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    th {
+        font-size: 1rem;
+    }
+
+    tr:nth-child(even) {
+        background-color: #beca8126;
+    }
 }
