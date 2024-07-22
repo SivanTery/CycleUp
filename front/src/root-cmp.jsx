@@ -7,6 +7,7 @@ import { AppHeader } from './cmps/app-header.jsx'
 // Pages
 import { HomePage } from './pages/home-page.jsx';
 import { Login } from './pages/login.jsx';
+import { Leads } from './pages/leads.jsx';
 import { Signup } from './pages/signup.jsx';
 import { ForgotPassword } from './pages/forgot-password.jsx';
 import { ScanPage } from './pages/scan-page.jsx';
@@ -35,6 +36,7 @@ export function RootCmp() {
                         <Routes>
                             <Route element={<HomePage />} path="/" />
                             <Route element={<UserDetails />} path="/user" />
+                            <Route element={<Leads />} path="/leads" />
                             <Route element={<SearchGarbage />} path="/search-garbage" />
                             <Route element={<Login />} path="/login" />
                             <Route element={<Signup />} path="/signup" />

@@ -1,57 +1,34 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {NavLink, Link} from 'react-router-dom'
+import dollar from "../assets/icons/dollar.png";
 
 export function UserDetails() {
 
     const [user, setUser] = useState( {} )
-
-    function onSubmit( ev ) {
-        ev.preventDefault()
-        // TODO: CREATE USER
-        // userLogin(user)
-        window.location.href = '/'
-    }
-
-    function handleChange( { target } ) {
-        let { value, name : field } = target
-        setUser( ( prevState ) => {
-            return { ...prevState, [ field ] : value }
-        } )
-    }
+    const isLoggedIn = sessionStorage.getItem( 'user_logged_in' )
+    useEffect( () => {
+        if ( !isLoggedIn ) {
+            window.location.href = '/#/login'
+        }
+    }, [] );
 
     return (
-        <section className='login main-layout'>
+        <section className='user main-layout'>
             <div className="container">
-                <h1>ברוכים הבאים</h1>
-                <form onSubmit={onSubmit} className='login-form'>
-                        <div className='login-container'>
-                            <label htmlFor="name">שם משתמש:</label>
-                            <input type='text'
-                                id="name"
-                                name='name'
-                                placeholder='הזן את שם המשתמש'
-                                value={user.name}
-                                onChange={handleChange}
-                            />
-                        </div>
+                <h1>שלום רון!</h1>
+                <div className="image-wrapper">
+                    <img src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""/>
+                </div>
+                <div className="price">
+                    <span>4,652</span>
+                    <img src={dollar}/>
+                </div>
+                <div className="action-wrapper">
+                <NavLink className="site-btn" to="/leads">מי מוביל?</NavLink>
+                <NavLink className="site-btn" to="/my-benefits">ההטבות שלי</NavLink>
+                <NavLink className="site-btn" to="/update-user">עדכון פרטים אישיים</NavLink>
+                </div>
 
-                        <div className='login-container'>
-                            <label htmlFor="company">סיסמא:</label>
-                            <input type='text'
-                                name='company'
-                                id='company'
-                                placeholder='הזן את הסיסמא'
-                                value={user.password}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div className="actions-wrapper">
-                            <button className="login-btn">התחברות</button>
-                            <NavLink className="forgot-pass" to="/forgot-password">שכחתי סיסמא</NavLink>
-                            <NavLink className="login-btn" to="/signup">יצירת משתמש</NavLink>
-                        </div>
-
-                    </form>
             </div>
         </section>
     )

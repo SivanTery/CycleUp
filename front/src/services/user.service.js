@@ -42,6 +42,9 @@ function login( user ) {
         }
     }else{
         console.log( get(user.name) );
+        return {
+            status: 'success'
+        }
     }
 }
 

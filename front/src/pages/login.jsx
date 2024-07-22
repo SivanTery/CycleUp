@@ -9,7 +9,10 @@ export function Login() {
     function onSubmit( ev ) {
         ev.preventDefault()
         // TODO: CREATE USER
-        userService.login(user)
+        let res = userService.login(user)
+        if(res.status === 'success'){
+            sessionStorage.setItem('user_logged_in', true)
+        }
         // window.location.href = '/'
     }
 
