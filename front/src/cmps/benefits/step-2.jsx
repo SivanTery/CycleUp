@@ -30,8 +30,8 @@ export function SecondStep( { img, desc, setStep, id } ) {
                     <p>{desc}</p>
                     <p>תקף עד {getFutureDate()} גם במבצעים והנחות המיועדים לכלל הלקוחות.</p>
 
-                <button className="site-btn" onClick={() => handleCancel()}>ביטול</button>
                 <button className="site-btn" onClick={() => handleClick()}>ביצוע רכישה</button>
+                <button className="site-btn" onClick={() => handleCancel()}>ביטול</button>
                 </div>
 
             </div>

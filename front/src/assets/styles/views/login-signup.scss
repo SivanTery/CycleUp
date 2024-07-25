@@ -22,7 +22,7 @@
     }
 
     h1 {
-        margin-block: 60px;
+        margin-block: 140px 60px;
         text-align: center;
         font-size: 40px;
 
@@ -35,6 +35,11 @@
         max-width: 400px;
         text-align: center;
         margin: 0 auto 40px;
+
+
+        &.forgot-password-text {
+            font-size: 18px;
+        }
     }
     form {
         display: flex;
@@ -42,21 +47,29 @@
         gap: 10px;
         max-width: 400px;
         margin: 0 auto;
+
+
     }
 
     .login-container {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         gap: 10px;
 
         &:nth-last-child(2) {
             margin-bottom: 40px;
         }
 
+        label {
+            font-size: 24px;
+        }
+
         input, select {
             width: clamp(180px, 100%, 250px);
             padding: 10px;
             border-radius: 4px;
+            font-size: 24px;
             border: 1px solid $p-clr1;
         }
     }

@@ -19,18 +19,15 @@ export function ForgotPassword() {
     return (
         <section className='login main-layout'>
             <div className="container">
-                <h1 className='forgot-password-title'>שחזור סיסמא</h1>
-                <p>נא להכניס את המייל שאיתו נכנסת
-                    בעבר למערכת ולאחר מכן יש ללחוץ
-                    ”שליחה“ לקבלת לינק לשחזור
-                    סיסמה</p>
+                <h1 className='forgot-password-title'>שחזור סיסמה</h1>
+                <p className='forgot-password-text'>לשחזור סיסמה נא להכניס את המייל שאיתו נרשמת</p>
                 <form onSubmit={onSubmit} className='forgot-password-form'>
                     <div className='login-container'>
                         <label htmlFor="name">מייל:</label>
                         <input type='mail'
                             id="mail"
                             name='mail'
-                            placeholder='הזן את המייל איתו נרשמת'
+                            placeholder='הזן מייל'
                             value={mail}
                             onChange={handleChange}
                         />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 // import { Routes, Route } from 'react-router'
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -19,6 +19,7 @@ import { UserDetails } from './pages/user-details'
 import { SearchGarbage } from './pages/search-garbage'
 
 import { AppFooter } from './cmps/app-footer'
+import {dbService } from './services/db.service.js'
 
 // TODO: explain about provider and store
 import { Provider } from 'react-redux';
@@ -26,6 +27,8 @@ import { store } from './store/store.js';
 
 
 export function RootCmp() {
+
+
 
     return (
         <Provider store={store}>

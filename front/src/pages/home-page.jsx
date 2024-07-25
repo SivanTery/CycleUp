@@ -8,7 +8,7 @@ export function HomePage() {
             <section className='home main-layout'>
                 <div className='nav-card-wrapper'>
                     <div className='nav-card'>
-                    <NavLink to="/scan">סריקת מוצר</NavLink>
+                    <NavLink to="/scan">קבלת מידע</NavLink>
                     <img src={qr}/>
                     </div>
                     <div className='nav-card'>

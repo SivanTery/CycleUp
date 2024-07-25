@@ -52,11 +52,19 @@
             margin: 0 auto;
             background: white;
             padding: 40px;
-            max-width: 350px;
+            max-width: 500px;
             border-radius: 20px;
 
             .site-btn:first-of-type {
                 margin-left: 10px;
+            }
+
+            h2{
+                font-size: 20px;
+            }
+
+            p{
+                font-size: 18px;
             }
         }
     }

@@ -39,12 +39,12 @@ export function Signup() {
                         </div>
 
                         <div className='login-container'>
-                            <label htmlFor="password">סיסמא:</label>
+                            <label htmlFor="password">סיסמה:</label>
                             <input type='password'
                                 name='password'
                                 id='password'
                                 required
-                                placeholder='הזן סיסמא'
+                                placeholder='הזן סיסמה'
                                 value={user.password}
                                 onChange={handleChange}
                             />

@@ -40,18 +40,18 @@ export function Login() {
                         </div>
 
                         <div className='login-container'>
-                            <label htmlFor="password">סיסמא:</label>
+                            <label htmlFor="password">סיסמה:</label>
                             <input type='password'
                                 name='password'
                                 id='password'
-                                placeholder='הזן את הסיסמא'
+                                placeholder='הזן את הסיסמה'
                                 value={user.password}
                                 onChange={handleChange}
                             />
                         </div>
                         <div className="actions-wrapper">
                             <button className="login-btn">התחברות</button>
-                            <NavLink className="forgot-pass" to="/forgot-password">שכחתי סיסמא</NavLink>
+                            <NavLink className="forgot-pass" to="/forgot-password">שכחתי סיסמה</NavLink>
                             <NavLink className="login-btn" to="/signup">יצירת משתמש</NavLink>
                         </div>
 

@@ -134,6 +134,8 @@ a:hover {
     gap: 20px;
     height: max-content;
     justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 
@@ -156,7 +158,8 @@ button {
     border: 1px solid $p-clr2;
     cursor: pointer;
     font-weight: 600;
-    font-size: 16px;
+    min-width: 240px;
+    font-size: 18px;
 }
 
 .arrow-back {

@@ -1,0 +1,52 @@
+[
+    {
+        "benefit_id": "1",
+        "business_name": "cafe cafe",
+        "voucher_value": "800"
+    },
+    {
+        "benefit_id": "2",
+        "business_name": "Sultam",
+        "voucher_value": "2000"
+    },
+    {
+        "benefit_id": "3",
+        "business_name": "Benedict Restaurant",
+        "voucher_value": "1000"
+    },
+    {
+        "benefit_id": "4",
+        "business_name": "Stimatski",
+        "voucher_value": "500"
+    },
+    {
+        "benefit_id": "5",
+        "business_name": "Fox",
+        "voucher_value": "750"
+    },
+    {
+        "benefit_id": "6",
+        "business_name": "Castro",
+        "voucher_value": "1200"
+    },
+    {
+        "benefit_id": "7",
+        "business_name": "Adidas",
+        "voucher_value": "1200"
+    },
+    {
+        "benefit_id": "8",
+        "business_name": "Nike",
+        "voucher_value": "2000"
+    },
+    {
+        "benefit_id": "9",
+        "business_name": "foot Locker",
+        "voucher_value": "1000"
+    },
+    {
+        "benefit_id": "10",
+        "business_name": "Bilabong",
+        "voucher_value": "1000"
+    }
+]
