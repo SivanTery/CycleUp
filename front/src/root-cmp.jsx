@@ -16,6 +16,7 @@ import { ProductAddPage } from './pages/product-add.jsx';
 import { InviteFriendsPage } from './pages/invite-friends.jsx';
 import { BenefitsPage } from './pages/benefits.jsx';
 import { UserDetails } from './pages/user-details'
+import { UserUpdate } from './pages/user-update'
 import { SearchGarbage } from './pages/search-garbage'
 
 import { AppFooter } from './cmps/app-footer'
@@ -39,6 +40,7 @@ export function RootCmp() {
                         <Routes>
                             <Route element={<HomePage />} path="/" />
                             <Route element={<UserDetails />} path="/user" />
+                            <Route element={<UserUpdate />} path="/user-update" />
                             <Route element={<Leads />} path="/leads" />
                             <Route element={<SearchGarbage />} path="/search-garbage" />
                             <Route element={<Login />} path="/login" />

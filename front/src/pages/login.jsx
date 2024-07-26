@@ -13,7 +13,7 @@ export function Login() {
         if(res.status === 'success'){
             sessionStorage.setItem('user_logged_in', true)
         }
-        // window.location.href = '/'
+        window.location.href = '/'
     }
 
     function handleChange( { target } ) {

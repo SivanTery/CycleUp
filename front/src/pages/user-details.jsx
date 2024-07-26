@@ -26,7 +26,7 @@ export function UserDetails() {
                 <div className="action-wrapper">
                 <NavLink className="site-btn" to="/leads">מי מוביל?</NavLink>
                 <NavLink className="site-btn" to="/my-benefits">ההטבות שלי</NavLink>
-                <NavLink className="site-btn" to="/update-user">עדכון פרטים אישיים</NavLink>
+                <NavLink className="site-btn" to="/user-update">עדכון פרטים אישיים</NavLink>
                 </div>
 
             </div>
