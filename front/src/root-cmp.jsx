@@ -15,6 +15,7 @@ import { ProductPage } from './pages/product-page.jsx';
 import { ProductAddPage } from './pages/product-add.jsx';
 import { InviteFriendsPage } from './pages/invite-friends.jsx';
 import { BenefitsPage } from './pages/benefits.jsx';
+import {MyBenefits } from './pages/my-benefits.jsx';
 import { UserDetails } from './pages/user-details'
 import { UserUpdate } from './pages/user-update'
 import { SearchGarbage } from './pages/search-garbage'
@@ -51,6 +52,7 @@ export function RootCmp() {
                             <Route element={<ProductAddPage />} path="/add-product" />
                             <Route element={<InviteFriendsPage />} path="/invite-friends" />
                             <Route element={<BenefitsPage />} path="/benefits" />
+                            <Route element={<MyBenefits />} path="/my-benefits" />
 
                         </Routes>
                     </main>
