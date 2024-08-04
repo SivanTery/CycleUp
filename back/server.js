@@ -4,7 +4,8 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const app = express()
 const http = require('http').createServer(app)
-
+const dbService = require( './services/db.service' );
+const config = require( './config/index' );
 // Product
 // product
 
@@ -23,6 +24,10 @@ if (process.env.NODE_ENV === 'production') {
     app.use(cors(corsOptions))
 }
 
+// app.get( '/api/users', ( req, res ) => {
+//     res.json( { users : ['user1', 'user2', 'user3'] } );
+// } );
+
 
 
 // require all the routes
@@ -30,6 +35,18 @@ const requestRoutes = require('./api/requests/requests.routes')
 
 // The main route for the app
 app.use('/api/request', requestRoutes)
+
+// Connect to DB and start server
+dbService.connect()
+    .then( () => {
+        const port = process.env.PORT || 3030;
+        http.listen( port, () => {
+            logger.info( 'Server is running on port: ' + port );
+        } );
+    } )
+    .catch( err => {
+        logger.error( 'Failed to start server', err );
+    } );
 
 app.get('/**', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'))

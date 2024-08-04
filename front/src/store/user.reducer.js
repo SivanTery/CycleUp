@@ -3,7 +3,7 @@ import { userService } from "../services/user.service"
 export const SET_USER = 'SET_USER'
 export const ADD_USER = 'ADD_USER'
 const initialState = {
-    user: userService.get(),
+    user: null,
 }
 
 export function userReducer(state = initialState, action) {

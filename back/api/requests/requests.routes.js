@@ -3,10 +3,10 @@ const {getItems, getItemById, addItem, updateItem, removeItem} = require('./requ
 const router = express.Router()
 
 
-router.get('/', getItems)
-router.get('/:id', getItemById)
-router.post('/', addItem)
-router.put('/:id', updateItem)
-router.delete('/:id', removeItem)
+router.get('/users/', getItems)
+router.get('/users/:id', getItemById)
+router.post('/users/', addItem)
+router.put('/users/:id', updateItem)
+router.delete('/users/:id', removeItem)
 
 module.exports = router

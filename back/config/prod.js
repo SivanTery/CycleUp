@@ -1,4 +1,4 @@
 module.exports = {
-  dbURL: 'mongodb+srv://mori:mori@cluster0.nwvypal.mongodb.net/?retryWrites=true&w=majority',
-  dbName : 'ProductDB'
+    dbURL : "mongodb+srv://edenbenza:cycleup123@cluster0.fanzznj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    dbName : 'CycleUP'
 }

@@ -10,6 +10,7 @@ async function getItems( req, res ) {
         }
         const items = await requestsService.query( filterBy )
         res.json( items )
+        console.log(items)
     } catch ( err ) {
         logger.error( 'Failed to get items', err )
         res.status( 500 ).send( { err : 'Failed to get items' } )

@@ -8,8 +8,11 @@ export function Login() {
 
     function onSubmit( ev ) {
         ev.preventDefault()
+        console.log(user)
         // TODO: CREATE USER
         let res = userService.login(user)
+        console.log(res)
+        return
         if(res.status === 'success'){
             sessionStorage.setItem('user_logged_in', true)
         }

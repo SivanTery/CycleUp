@@ -1,9 +1,9 @@
-// import { httpService } from './http.service.js'
+import { httpService } from './http.service.js'
 
-import {userStorageService} from './user-storage.service.js'
+// import {httpService} from './user-storage.service.js'
 
 // const BASE_URL = 'user/'
-const BASE_URL = 'user'
+const BASE_URL = 'users'
 
 export const userService = {
     query,
@@ -14,12 +14,12 @@ export const userService = {
 }
 
 function query( filterBy = getDefaultFilter() ) {
-    return userStorageService.query( BASE_URL, filterBy )
+    return httpService.get( BASE_URL, filterBy )
 }
 
-function get( filterBy = '') {
-    const queryParams = `?name=${filterBy.name}`
-    return userStorageService.get( BASE_URL + queryParams )
+function get( user = {}) {
+    console.log(user)
+    return httpService.get( BASE_URL, user )
 }
 
 function save( user ) {
@@ -29,7 +29,7 @@ function save( user ) {
             error : 'missing username or password'
         }
     } else {
-        return userStorageService.post( BASE_URL, user )
+        return httpService.post( BASE_URL, user )
     }
 }
 
@@ -41,7 +41,7 @@ function login( user ) {
             error : 'missing username or password'
         }
     }else{
-        console.log( get(user.name) );
+        console.log( get(user) );
         return {
             status: 'success'
         }
