@@ -18,30 +18,30 @@ function query( filterBy = getDefaultFilter() ) {
 }
 
 function get( user = {}) {
-    console.log(user)
     return httpService.get( BASE_URL, user )
 }
 
 function save( user ) {
-    if ( !user.name || !user.password ) {
+    if ( !user.email || !user.password ) {
         return {
             status: 'error',
             error : 'missing username or password'
         }
     } else {
-        return httpService.post( BASE_URL, user )
+        return httpService.get( BASE_URL, user )
     }
 }
 
 
 function login( user ) {
-    if ( !user.name || !user.password ){
+    if ( !user.email || !user.password ){
         return {
             status: 'error',
             error : 'missing username or password'
         }
     }else{
-        console.log( get(user) );
+        let res = get(user)
+        console.log(res)
         return {
             status: 'success'
         }

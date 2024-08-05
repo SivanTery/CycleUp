@@ -36,17 +36,6 @@ const requestRoutes = require('./api/requests/requests.routes')
 // The main route for the app
 app.use('/api/request', requestRoutes)
 
-// Connect to DB and start server
-dbService.connect()
-    .then( () => {
-        const port = process.env.PORT || 3030;
-        http.listen( port, () => {
-            logger.info( 'Server is running on port: ' + port );
-        } );
-    } )
-    .catch( err => {
-        logger.error( 'Failed to start server', err );
-    } );
 
 app.get('/**', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'))

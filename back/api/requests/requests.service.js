@@ -4,13 +4,16 @@ const ObjectId = require('mongodb').ObjectId
 
 // item
 
-async function query(filterBy={txt:''}) {
+async function query(path, filterBy={ email:''}) {
     try {
         const criteria = {
-            txt: { $regex: filterBy.txt, $options: 'i' }
+            email: { $regex: filterBy.email, $options: 'i' }
         }
-        const collection = await dbService.getCollection('item')
-        var items = await collection.find(criteria).toArray()
+        console.log(criteria)
+        const collection = await dbService.getCollection( path)
+        var items = await collection.find( ).toArray()
+        // var items = await collection.find( criteria).toArray()
+        console.log( items)
         return items
     } catch (err) {
         logger.error('cannot find items', err)
@@ -18,10 +21,12 @@ async function query(filterBy={txt:''}) {
     }
 }
 
-async function getById(itemId) {
+async function getById(path, itemId) {
     try {
-        const collection = await dbService.getCollection('item')
+        const collection = await dbService.getCollection( path)
         const item = collection.findOne({ _id: ObjectId(itemId) })
+        console.log( items )
+
         return item
     } catch (err) {
         logger.error(`while finding item ${itemId}`, err)
@@ -29,9 +34,9 @@ async function getById(itemId) {
     }
 }
 
-async function remove(itemId) {
+async function remove( path, itemId) {
     try {
-        const collection = await dbService.getCollection('item')
+        const collection = await dbService.getCollection( path)
         await collection.deleteOne({ _id: ObjectId(itemId) })
         return itemId
     } catch (err) {
@@ -40,9 +45,9 @@ async function remove(itemId) {
     }
 }
 
-async function add(item) {
+async function add(path, item) {
     try {
-        const collection = await dbService.getCollection('item')
+        const collection = await dbService.getCollection(path)
         await collection.insertOne(item)
         return item
     } catch (err) {
@@ -51,12 +56,12 @@ async function add(item) {
     }
 }
 
-async function update(item) {
+async function update(path, item) {
     try {
         const itemToSave = {
             txt: item.txt
         }
-        const collection = await dbService.getCollection('item')
+        const collection = await dbService.getCollection(path)
         await collection.updateOne({ _id: ObjectId(item._id) }, { $set: itemToSave })
         return item
     } catch (err) {

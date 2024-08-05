@@ -9,4 +9,11 @@ router.post('/users/', addItem)
 router.put('/users/:id', updateItem)
 router.delete('/users/:id', removeItem)
 
+
+router.get('/benefits/', getItems)
+router.get('/benefits/:id', getItemById)
+router.post('/benefits/', addItem)
+router.put('/benefits/:id', updateItem)
+router.delete('/benefits/:id', removeItem)
+
 module.exports = router

@@ -12,9 +12,9 @@ export function Login() {
         // TODO: CREATE USER
         let res = userService.login(user)
         console.log(res)
-        return
-        if(res.status === 'success'){
+        // let res = userService.query()
             sessionStorage.setItem('user_logged_in', true)
+        if(res.status === 'success'){
         }
         window.location.href = '/'
     }
@@ -22,6 +22,7 @@ export function Login() {
     function handleChange( { target } ) {
         let { value, name : field } = target
         setUser( ( prevState ) => {
+            console.log( { ...prevState, [ field ] : value })
             return { ...prevState, [ field ] : value }
         } )
     }
@@ -32,12 +33,12 @@ export function Login() {
                 <h1>ברוכים הבאים</h1>
                 <form onSubmit={onSubmit} className='login-form'>
                         <div className='login-container'>
-                            <label htmlFor="name">שם משתמש:</label>
+                            <label htmlFor="email">שם משתמש:</label>
                             <input type='text'
-                                id="name"
-                                name='name'
+                                id="email"
+                                name='email'
                                 placeholder='הזן את שם המשתמש'
-                                value={user.name}
+                                value={user.email}
                                 onChange={handleChange}
                             />
                         </div>

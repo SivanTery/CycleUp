@@ -88,16 +88,6 @@ export function UserUpdate() {
                             />
                         </div>
 
-                        <div className='login-container'>
-                            <label htmlFor="coupon">קוד חבר:</label>
-                            <input type='text'
-                                name='coupon'
-                                id='coupon'
-                                placeholder='הזן קוד חבר'
-                                value={user.coupon}
-                                onChange={handleChange}
-                            />
-                        </div>
 
                         <button className="login-btn">אישור</button>
 
