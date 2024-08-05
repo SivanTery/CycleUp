@@ -60,15 +60,15 @@
                 width: 100%;
             }
 
-            h2{
+            h2 {
                 font-size: 20px;
             }
 
-            p{
+            p {
                 font-size: 18px;
             }
 
-            .action-wrapper{
+            .action-wrapper {
                 display: flex;
                 gap: 20px;
                 justify-content: center;
@@ -115,13 +115,14 @@
         width: max-content;
     }
 
-    .code-wrapper{
+    .code-wrapper {
         padding: 20px;
         background: #f1f1e6;
         border: 1px solid #a16767;
         border-radius: 20px;
     }
-    .alert{
+
+    .alert {
         color: red;
         margin-bottom: 25px;
     }
@@ -139,6 +140,7 @@
 
     .brand-card {
         position: relative;
+        width: 30%;
 
         .brand-img {
             width: 100%;

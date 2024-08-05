@@ -11,9 +11,10 @@ router.delete('/users/:id', removeItem)
 
 
 router.get('/benefits/', getItems)
-router.get('/benefits/:id', getItemById)
-router.post('/benefits/', addItem)
-router.put('/benefits/:id', updateItem)
-router.delete('/benefits/:id', removeItem)
+
+router.get('/products/', getItems)
+
+router.get('/recycling_bins/', getItems)
+
 
 module.exports = router

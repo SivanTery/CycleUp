@@ -14,7 +14,6 @@ export function BenefitsList( { setActiveBenefit } ) {
         const fetchBenefits = async () => {
             try {
                 const result = await benefitsService.query();
-                console.log( result )
                 setBenefits( result );
             } catch ( error ) {
                 console.error( 'Failed to fetch benefits', error );

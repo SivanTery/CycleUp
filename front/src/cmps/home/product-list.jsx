@@ -1,7 +1,9 @@
-import { ProductPreview } from "./product-preview.jsx";
+import {ProductPreview} from "./product-preview.jsx";
+import {useEffect, useState} from "react";
+import {productsService} from "../../services/products.service";
+import {binsService} from "../../services/bins.service";
 
-
-export function ProductList({products}) {
+export function ProductList( { products }) {
 
 
     return (

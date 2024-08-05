@@ -36,9 +36,9 @@ function save(product) {
 
 function getGarbageTypes() {
     return {
-       כחול: 'נייר',
-       כתום: 'חבילות + פלסטיק',
-       סגול: 'זכוכית',
+       'Blue' : 'נייר',
+       'Orange' : 'חבילות + פלסטיק',
+       'Purple': 'זכוכית',
     }
 }
 

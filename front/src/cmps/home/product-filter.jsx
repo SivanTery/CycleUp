@@ -3,7 +3,7 @@ import { productService } from "../../services/product.service"
 import { utilService } from "../../services/util.service"
 import { setFilter } from "../../store/product.action"
 
-export function ProductFilter() {
+export function ProductFilter( { setFilterBinColor }) {
 
     const [filterBy, setFilterBy] = useState(productService.getDefaultFilter())
     const onSetFilter = useRef(utilService.debounce(setFilter))
@@ -23,6 +23,7 @@ export function ProductFilter() {
     function handleChange({ target }) {
         let { value, name: field } = target
         setFilterBy((prevFilter) => ({ ...prevFilter, [field]: value }))
+        setFilterBinColor( value )
     }
 
     return <form className="product-filters">
@@ -51,7 +52,7 @@ export function ProductFilter() {
                     value={garbageType}
                     style={{ fontSize: '13px', width: '90%' }}
                   >
-                    {garbageType + ' - ' + garbageTypes[garbageType]}
+                    {garbageTypes[garbageType]}
                   </option>
                 ))}
             </select>
