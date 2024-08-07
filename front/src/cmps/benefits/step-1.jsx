@@ -1,7 +1,7 @@
 import dollar from '../../assets/icons/dollar.png';
 import {useState} from "react"
 
-export function FirstStep( { img, desc, setStep, id } ) {
+export function FirstStep( { img, desc, setStep, id, price } ) {
 
     function handleClick() {
         setStep(prevState => ++prevState)
@@ -15,7 +15,7 @@ export function FirstStep( { img, desc, setStep, id } ) {
                 </div>
                 <h1>{desc}</h1>
                 <div className="price">
-                    <span>1,000</span>
+                    <span>{price}</span>
                     <img src={dollar}/>
                 </div>
 

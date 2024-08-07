@@ -43,6 +43,7 @@ export function BenefitsList( { setActiveBenefit } ) {
                                 id : benefit.benefitCode,
                                 img : benefit.imgUrl,
                                 desc : 'שובר בסך ' + benefit.moneyWorth +'  ₪ ברשת ' + benefit.businessName,
+                                price : benefit.voucherCost,
                             } )}
                         ></a>
                     </div>

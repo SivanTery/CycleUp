@@ -24,6 +24,7 @@ export function BenefitsPage() {
                         img={activeBenefit.img}
                         desc={activeBenefit.desc}
                         id={activeBenefit.id}
+                        price={activeBenefit.price}
                     /> : <BenefitsList setActiveBenefit={onBenefitClick}/>}
 
             </section>
