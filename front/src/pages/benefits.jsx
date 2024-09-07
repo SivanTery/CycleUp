@@ -17,6 +17,10 @@ export function BenefitsPage() {
         setActiveBenefit( val)
     }
 
+    const onCloseBenefit = () => {
+        setActiveBenefit( null)
+    }
+
     return (
             <section className={(activeBenefit ? 'single-benefit' : 'benefits  main-layout')}>
                 {activeBenefit ?
@@ -25,7 +29,8 @@ export function BenefitsPage() {
                         desc={activeBenefit.desc}
                         id={activeBenefit.id}
                         price={activeBenefit.price}
-                    /> : <BenefitsList setActiveBenefit={onBenefitClick}/>}
+                        setActiveBenefit={onCloseBenefit}
+                    /> : <BenefitsList activeBenefit={activeBenefit} setActiveBenefit={onBenefitClick}/>}
 
             </section>
     )

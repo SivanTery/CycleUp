@@ -10,6 +10,27 @@
         
     }
 
+    .user-details{
+        display: flex;
+        gap: 10px;
+        font-weight: 600;
+        flex-direction: row-reverse;
+    }
+
+    .price {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 5px;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: 400;
+
+        img {
+            max-width: 20px;
+            padding: 0;
+        }
+    }
     nav{
         display: flex;
         justify-content: space-between;

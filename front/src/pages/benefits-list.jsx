@@ -6,7 +6,7 @@ import naaman from '../assets/img/naaman.png';
 import {useEffect, useState} from "react";
 import {benefitsService} from "../services/benefits.service";
 
-export function BenefitsList( { setActiveBenefit } ) {
+export function BenefitsList( { activeBenefit, setActiveBenefit } ) {
 
     const [benefits, setBenefits] = useState( [] )
 

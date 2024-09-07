@@ -50,15 +50,13 @@ export function ProductIndex() {
         fetchData();
     }, [] );
 
-    useEffect( () => {
-        setFilteredProducts( products.filter( product => {
-            return product.productName.includes( filterBySearch.productName )
-        } ) );
-    }, [filterBySearch] );
 
     useEffect( () => {
-        setFilteredProducts( products.filter( product => product.binColor === filterBinColor ) );
-    }, [filterBinColor] );
+        setFilteredProducts( products.filter( product => {
+            if( !filterBinColor || filterBinColor === 'All') return product.productName.includes( filterBySearch.productName )
+            return product.binColor === filterBinColor && product.productName.includes( filterBySearch.productName )
+        } ) );
+    }, [filterBinColor, filterBySearch] );
 
 
     return (

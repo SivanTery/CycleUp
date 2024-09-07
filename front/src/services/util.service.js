@@ -7,7 +7,8 @@ export const utilService = {
     animateCSS,
     debounce,
     getFormattedDate,
-    titleCase
+    titleCase,
+    getFutureDate
 }
 
 function makeId(length = 6) {
@@ -19,6 +20,12 @@ function makeId(length = 6) {
     }
 
     return txt
+}
+
+function getFutureDate( timestamp, addDays ) {
+    let date = new Date( timestamp );
+    date.setDate( date.getDate() + addDays );
+    return date.toLocaleDateString( 'he-IL' );
 }
 
 function makeLorem(size = 100) {

@@ -36,6 +36,7 @@ function save(product) {
 
 function getGarbageTypes() {
     return {
+       'All' : 'הכל',
        'Blue' : 'נייר',
        'Orange' : 'חבילות + פלסטיק',
        'Purple': 'זכוכית',

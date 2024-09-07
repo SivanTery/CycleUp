@@ -14,6 +14,7 @@ export function Login() {
         console.log(res)
         // let res = userService.query()
             sessionStorage.setItem('user_logged_in', true)
+            localStorage.setItem('tokens', 8580)
         if(res.status === 'success'){
         }
         window.location.href = '/'

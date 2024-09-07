@@ -6,6 +6,7 @@ import {setFilter} from "../../store/product.action"
 export function ProductFilter( { setFilterBinColor, setFilterSearch } ) {
 
     const [filterBy, setFilterBy] = useState( productService.getDefaultFilter() )
+    const [filterGarbageType, setFilterGarbageType] = useState( '' )
     const onSetFilter = useRef( utilService.debounce( setFilterBy ) )
     const elInputRef = useRef( null )
 
@@ -26,6 +27,7 @@ export function ProductFilter( { setFilterBinColor, setFilterSearch } ) {
     }
 
     function handleSelect( { target } ) {
+        setFilterGarbageType( target.value )
         setFilterBinColor( target.value )
     }
 
@@ -48,7 +50,7 @@ export function ProductFilter( { setFilterBinColor, setFilterSearch } ) {
                 value={filterBy.garbageType}
                 name='garbageType'
             >
-                <option value="" disabled>בחר סוג פח</option>
+                <option value="" disabled>{filterGarbageType ? garbageTypes[filterGarbageType] : 'בחר סוג פח'}</option>
                 {Object.keys( garbageTypes ).map( ( garbageType ) => (
                     <option
                         key={garbageType}

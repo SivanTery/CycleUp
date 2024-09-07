@@ -20,7 +20,7 @@ export function UserDetails() {
                     <img src={eden}/>
                 </div>
                 <div className="price">
-                    <span>4,652</span>
+                    <span>{localStorage.getItem( 'tokens' )}</span>
                     <img src={dollar}/>
                 </div>
                 <div className="action-wrapper">

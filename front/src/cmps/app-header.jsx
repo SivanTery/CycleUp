@@ -1,5 +1,6 @@
 import {NavLink, useLocation} from 'react-router-dom'
 import {useEffect, useState} from "react";
+import dollar from "../assets/icons/dollar.png";
 
 export function AppHeader() {
 
@@ -20,7 +21,9 @@ export function AppHeader() {
 
         // Run handleLocationChange whenever location changes
         handleLocationChange();
+        console.log( location)
     }, [location] );
+
     function goBack() {
         window.history.back()
     }
@@ -31,6 +34,19 @@ export function AppHeader() {
                 <nav>
                     <NavLink to="/" className="logo">CycleUp</NavLink>
 
+                    {/*hide when location is /#/user*/}
+                    {location.pathname !== '/user' ? <div className="user-details">
+                        שלום עדן
+                        <div className="price">
+                            <span>{localStorage.getItem( 'tokens' )}</span>
+                            <img src={dollar}/>
+                        </div>
+                    </div> : null }
+
+
+
+
+
                     {showBackButton ? <button className="arrow-back" onClick={() => goBack()}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="30px" height="30px" viewBox="0 0 24 24">
                             <g data-name="Layer 2">
@@ -40,7 +56,7 @@ export function AppHeader() {
                                 </g>
                             </g>
                         </svg>
-                    </button> : null }
+                    </button> : null}
 
                 </nav>
             </div>

@@ -11,6 +11,7 @@ export function ProductAdd() {
     function onAddProduct( ev ) {
         ev.preventDefault();
         saveProduct( product );
+        localStorage.setItem( 'tokens', +localStorage.getItem( 'tokens' ) + 10 )
         setShowThankyou( true );
     }
 
