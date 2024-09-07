@@ -43,8 +43,8 @@ function getGarbageTypes() {
 }
 
 function getDefaultFilter() {
-    return { 
-        name: '',
+    return {
+        productName: '',
         garbageType: '',
      }
 }
@@ -52,7 +52,7 @@ function getDefaultFilter() {
 function getEmptyProduct() {
 
     return {
-            name: "",
+        productName: "",
             garbageType: ""
     }
 }

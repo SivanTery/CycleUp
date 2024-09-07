@@ -1,62 +1,65 @@
-import { useEffect, useRef, useState } from "react"
-import { productService } from "../../services/product.service"
-import { utilService } from "../../services/util.service"
-import { setFilter } from "../../store/product.action"
+import {useEffect, useRef, useState} from "react"
+import {productService} from "../../services/product.service"
+import {utilService} from "../../services/util.service"
+import {setFilter} from "../../store/product.action"
 
-export function ProductFilter( { setFilterBinColor }) {
+export function ProductFilter( { setFilterBinColor, setFilterSearch } ) {
 
-    const [filterBy, setFilterBy] = useState(productService.getDefaultFilter())
-    const onSetFilter = useRef(utilService.debounce(setFilter))
-    const elInputRef = useRef(null)
+    const [filterBy, setFilterBy] = useState( productService.getDefaultFilter() )
+    const onSetFilter = useRef( utilService.debounce( setFilterBy ) )
+    const elInputRef = useRef( null )
 
     const garbageTypes = productService.getGarbageTypes()
 
-    useEffect(() => {
+    useEffect( () => {
         elInputRef.current.focus()
-    }, [])
+    }, [] )
 
-    useEffect(() => {
-        // update father cmp of filter change
-        onSetFilter.current(filterBy)
-    }, [filterBy])
+    function handleChange( { target } ) {
+        let { value, name : field } = target
+        setFilterBy( ( prevFilter ) => {
+            return { ...prevFilter, [ field ] : value }
+        } )
+        setFilterSearch( ( prevFilter ) => {
+            return { ...prevFilter, [ field ] : value }
+        } )
+    }
 
-    function handleChange({ target }) {
-        let { value, name: field } = target
-        setFilterBy((prevFilter) => ({ ...prevFilter, [field]: value }))
-        setFilterBinColor( value )
+    function handleSelect( { target } ) {
+        setFilterBinColor( target.value )
     }
 
     return <form className="product-filters">
-         <div className='filter-input-container'>
-         <label htmlFor="name">שם המוצר:</label>
+        <div className='filter-input-container'>
+            <label htmlFor="productName">שם המוצר:</label>
             <input type="text"
-                name="name"
+                name="productName"
                 placeholder="הזן את שם המוצר"
-                value={filterBy.name}
+                value={filterBy.productName}
                 onChange={handleChange}
                 ref={elInputRef}
             />
-          </div>
+        </div>
 
-          <div className='filter-input-container'>
-          <label htmlFor="garbageType">סוג פח למחזור:</label>
+        <div className='filter-input-container'>
+            <label htmlFor="garbageType">סוג פח למחזור:</label>
             <select
-                 onChange={handleChange}
-                 value={filterBy.garbageType}
-                 name='garbageType'
+                onChange={handleSelect}
+                value={filterBy.garbageType}
+                name='garbageType'
             >
                 <option value="" disabled>בחר סוג פח</option>
-                {Object.keys(garbageTypes).map((garbageType) => (
-                  <option
-                    key={garbageType}
-                    value={garbageType}
-                    style={{ fontSize: '13px', width: '90%' }}
-                  >
-                    {garbageTypes[garbageType]}
-                  </option>
-                ))}
+                {Object.keys( garbageTypes ).map( ( garbageType ) => (
+                    <option
+                        key={garbageType}
+                        value={garbageType}
+                        style={{ fontSize : '13px', width : '90%' }}
+                    >
+                        {garbageTypes[ garbageType ]}
+                    </option>
+                ) )}
             </select>
-         </div>
+        </div>
 
     </form>
 

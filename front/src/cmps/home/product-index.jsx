@@ -5,12 +5,13 @@ import { ProductList } from "./product-list.jsx";
 import { useSelector } from 'react-redux'
 import {productsService} from "../../services/products.service";
 import {binsService} from "../../services/bins.service";
+import {productService} from "../../services/product.service";
 
 export function ProductIndex() {
 
     // const { filterBy, products } = useSelector((storeState) => storeState.productModule)
-
-const [ filterBinColor, setFilterBinColor ] = useState( '' )
+    const [filterBySearch, setFilterSearch] = useState( productService.getDefaultFilter() )
+    const [ filterBinColor, setFilterBinColor ] = useState( '' )
     const [products, setProducts] = useState( [] )
     const [filteredProducts, setFilteredProducts] = useState( [] )
     const [bins, setBins] = useState( [] )
@@ -50,6 +51,12 @@ const [ filterBinColor, setFilterBinColor ] = useState( '' )
     }, [] );
 
     useEffect( () => {
+        setFilteredProducts( products.filter( product => {
+            return product.productName.includes( filterBySearch.productName )
+        } ) );
+    }, [filterBySearch] );
+
+    useEffect( () => {
         setFilteredProducts( products.filter( product => product.binColor === filterBinColor ) );
     }, [filterBinColor] );
 
@@ -57,7 +64,7 @@ const [ filterBinColor, setFilterBinColor ] = useState( '' )
     return (
         <section className='product-index'>
             <h1>רשימת המוצרים</h1>
-            <ProductFilter setFilterBinColor={setFilterBinColor} />
+            <ProductFilter setFilterBinColor={setFilterBinColor} setFilterSearch={setFilterSearch} />
             {products && <ProductList products={filteredProducts} />}
         </section>
     )

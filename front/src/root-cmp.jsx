@@ -29,7 +29,12 @@ import { store } from './store/store.js';
 
 
 export function RootCmp() {
-
+    const isLoggedIn = sessionStorage.getItem( 'user_logged_in' )
+    useEffect( () => {
+        if ( !isLoggedIn ) {
+            window.location.href = '/#/login'
+        }
+    }, [] );
 
 
     return (

@@ -7,7 +7,7 @@ export function Leads() {
     const users = [
         {name: 'ירדן', tokens: 82},
         {name: 'רונן', tokens: 80},
-        {name: 'יובל', tokens: 68},
+        {name: 'עדן', tokens: 68},
         {name: 'אביב', tokens: 57},
         {name: 'רון', tokens: 50},
         {name: 'אופיר', tokens: 30},
@@ -20,12 +20,12 @@ export function Leads() {
                 <div className="image-wrapper">
                     <img src={trophy}/>
                 </div>
-                <p>אז מי מיחזר הכי הרבה?</p>
+                <p style={{ fontWeight: 'bold' }}>אז מי מיחזר הכי הרבה?</p>
 
                 <div className="list">
                     {users.length ? users.map((user, idx) => {
-                        return <div className="list-item">
-                            <span className="number">{ idx}.</span>
+                        return <div className="list-item"key={idx} 
+                        style={{ backgroundColor: user.name === 'עדן' ? '#D3D3D3' : '#FFFFFF' }}>
                             <span className="name">{user['name']}</span>
                             <span className="tokens">{user['tokens']}</span>
                         </div>

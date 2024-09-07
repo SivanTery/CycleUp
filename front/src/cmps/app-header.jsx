@@ -8,7 +8,6 @@ export function AppHeader() {
 
     useEffect( () => {
         const handleLocationChange = () => {
-            console.log( 'test' );
             if ( location.pathname === '/' && (location.hash === '' || location.hash === '#/' || location.hash === '#') ) {
                 setShowBackButton( false );
             } else {

@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {NavLink, Link} from 'react-router-dom'
 import dollar from "../assets/icons/dollar.png";
-
+import eden from "../assets/img/eden.jpeg";
 export function UserDetails() {
 
     const [user, setUser] = useState( {} )
@@ -15,9 +15,9 @@ export function UserDetails() {
     return (
         <section className='user main-layout'>
             <div className="container">
-                <h1>שלום רון!</h1>
+                <h1>שלום עדן!</h1>
                 <div className="image-wrapper">
-                    <img src="https://xsgames.co/randomusers/avatar.php?g=male" alt=""/>
+                    <img src={eden}/>
                 </div>
                 <div className="price">
                     <span>4,652</span>
